@@ -9,16 +9,16 @@
 
 </div>
 
-`<a name="tech-stack">`⚙️ PromptHub `</a>`
+ PromptHub
 
-## `<a name="tech-stack">`⚙️ Tech Stack `</a>`
+## ⚙️ Tech Stack 
 
 - Next.js
 - MongoDB
 - NextAuth
 - TailwindCSS
 
-## `<a name="features">`🔋 Features `</a>`
+## 🔋 Features 
 
 👉 **Modern Design with Glassmorphism Trend Style**: A modern and visually appealing design, incorporating the glassmorphism trend style for a sleek and contemporary appearance.
 
