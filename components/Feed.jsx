@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import PromptCard from "./PromptCard";
 import handleApiError from "@utils/helpers/handleApiError";
-import { BarLoader, ClimbingBoxLoader, HashLoader } from "react-spinners";
+import { HashLoader } from "react-spinners";
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (

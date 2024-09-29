@@ -1,5 +1,3 @@
-// components/UserProfile.jsx
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -30,7 +28,7 @@ const UserProfile = ({ params }) => {
         setUserPosts(data);
       } catch (error) {
         setError(error.message);
-        handleApiError({ error }); // Show toast notification
+        handleApiError({ error }); 
       } finally {
         setIsLoading(false);
       }
@@ -39,7 +37,6 @@ const UserProfile = ({ params }) => {
     if (params?.id) fetchPosts();
   }, [params.id]);
 
-  // Show loading spinner while fetching data
   if (isLoading) {
     return (
       <div className="justify-center pt-3 mt-4 d-flex align-center w-100">
@@ -48,10 +45,8 @@ const UserProfile = ({ params }) => {
     );
   }
 
-  // Show error message if there's an error
   if (error) return <p className="mt-3 text-red-600">{error}</p>;
 
-  // Render the Profile component if data is loaded and no errors
   return (
     <Profile
       name={userName}
