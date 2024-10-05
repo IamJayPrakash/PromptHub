@@ -1,13 +1,14 @@
+// UserProfile.js
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 import Profile from "@components/Profile";
 import { HashLoader } from "react-spinners";
 import handleApiError from "@utils/helpers/handleApiError";
 
-const UserProfile = ({ params }) => {
+const UserProfileContent = ({ params }) => {
   const searchParams = useSearchParams();
   const userName = searchParams.get("name");
 
@@ -28,14 +29,14 @@ const UserProfile = ({ params }) => {
         setUserPosts(data);
       } catch (error) {
         setError(error.message);
-        handleApiError({ error }); 
+        handleApiError({ error });
       } finally {
         setIsLoading(false);
       }
     };
 
     if (params?.id) fetchPosts();
-  }, [params.id]);
+  }, [params?.id]);
 
   if (isLoading) {
     return (
@@ -55,5 +56,11 @@ const UserProfile = ({ params }) => {
     />
   );
 };
+
+const UserProfile = (props) => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <UserProfileContent {...props} />
+  </Suspense>
+);
 
 export default UserProfile;

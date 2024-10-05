@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import Form from "@components/Form";
 import { toast } from "react-toastify";
 import handleApiError from "@utils/helpers/handleApiError";
 
-const UpdatePrompt = () => {
+const UpdatePromptContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const promptId = searchParams.get("id");
@@ -49,8 +49,6 @@ const UpdatePrompt = () => {
         toast.success("Prompt updated successfully!");
       }
     } catch (error) {
-      console.log(error);
-      // handleApiError({ customMessage: "Failed to update prompt" });
       handleApiError({ error });
     } finally {
       setIsSubmitting(false);
@@ -67,5 +65,11 @@ const UpdatePrompt = () => {
     />
   );
 };
+
+const UpdatePrompt = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <UpdatePromptContent />
+  </Suspense>
+);
 
 export default UpdatePrompt;

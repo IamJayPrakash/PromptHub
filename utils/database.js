@@ -1,5 +1,3 @@
-// utils/connectToDB.js
-
 import mongoose from "mongoose";
 
 let isConnected = false; // To track the MongoDB connection
