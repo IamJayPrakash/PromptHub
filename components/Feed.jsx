@@ -34,7 +34,7 @@ const Feed = () => {
   const fetchPosts = async () => {
     try {
       const response = await fetch("/api/prompt");
-      if (!response.ok) throw new Error("Failed to fetch prompts!!");
+      if (!response.ok) throw new Error("Failed to fetch prompts, kindly refresh!");
       const data = await response.json();
       setAllPosts(data);
     } catch (error) {

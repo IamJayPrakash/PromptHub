@@ -19,7 +19,7 @@ const StyledToastContainer = styled(ToastContainer).attrs((props) => ({
 }))`
   /* Default styles for larger screens */
   width: 260px;
- margin-top: 3rem;
+  margin-top: 3rem;
 
 
   .Toastify__toast {

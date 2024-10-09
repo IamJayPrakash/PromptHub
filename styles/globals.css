@@ -211,16 +211,21 @@
 }
 
 .error-toast {
-  bottom: 100px;
-  right: 200px;
-  width: 500px;
+  bottom: 0px;
+  right: 50px;
+  width: 300px;
+}
+
+/* Large desktop view (min-width: 1200px) */
+@media (min-width: 1200px) {
+  .error-toast {
+    padding: 20px; /* Adjust padding as needed */
+  }
 }
 
 /* Tablet view (max-width: 768px) */
 @media (max-width: 768px) {
   .error-toast {
-    bottom: 80px;
-    right: 50px;
     width: 80%;
   }
 }
@@ -229,7 +234,7 @@
 @media (max-width: 480px) {
   .error-toast {
     bottom: 50px;
-    right: 20px;
+    right: 5px;
     width: 90%;
   }
 }
