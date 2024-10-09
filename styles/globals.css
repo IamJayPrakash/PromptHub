@@ -105,6 +105,10 @@
   @apply text-transparent bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text;
 }
 
+.black_gradient {
+  @apply text-transparent bg-gradient-to-r from-red-800 to-cyan-800 bg-clip-text;
+}
+
 .blue_red_gradient {
   @apply text-transparent bg-gradient-to-r from-blue-600 via-red-600 to-cyan-600 bg-clip-text;
 }
@@ -210,4 +214,22 @@
   bottom: 100px;
   right: 200px;
   width: 500px;
+}
+
+/* Tablet view (max-width: 768px) */
+@media (max-width: 768px) {
+  .error-toast {
+    bottom: 80px;
+    right: 50px;
+    width: 80%;
+  }
+}
+
+/* Mobile view (max-width: 480px) */
+@media (max-width: 480px) {
+  .error-toast {
+    bottom: 50px;
+    right: 20px;
+    width: 90%;
+  }
 }

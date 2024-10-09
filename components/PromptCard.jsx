@@ -42,10 +42,10 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
           />
 
           <div className="flex flex-col">
-            <h3 className="font-semibold text-gray-900 font-satoshi">
+            <h3 className="font-semibold text-gray-900 font-satoshi break-all">
               {post.creator?.username}
             </h3>
-            <p className="text-sm text-gray-500 font-inter">
+            <p className="text-sm text-gray-500 font-inter break-all">
               {post.creator?.email}
             </p>
           </div>

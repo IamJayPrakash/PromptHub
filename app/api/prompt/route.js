@@ -12,7 +12,7 @@ export const GET = async (request) => {
     console.error("Error fetching all prompts:", error);
     return new Response(
       JSON.stringify({
-        message: "Failed to fetch all prompts",
+        message: "Failed to fetch all prompts, kindly refresh page!",
         detail: error.message,
       }),
       { status: 500 }

@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <section className="flex-col w-full flex-center">
       <h1 className="text-center head_text">
-        Discover and share
+        Discover and share {" "}
         <br className="max-md:hidden" />
         <span className="text-center red_gradient">AI-Powered prompts</span>
       </h1>

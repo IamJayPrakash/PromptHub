@@ -17,7 +17,7 @@ const PromptCardList = ({ data, handleTagClick }) => {
           />
         ))
       ) : (
-        <p className="mt-3 blue_gradient">No prompts found</p>
+        <p className="mt-3 black_gradient">No prompts found!</p>
       )}
     </div>
   );
@@ -27,7 +27,6 @@ const Feed = () => {
   const [allPosts, setAllPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-
   const [searchText, setSearchText] = useState("");
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState([]);
@@ -79,6 +78,12 @@ const Feed = () => {
     setSearchedResults(searchResult);
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+    }
+  };
+
   if (isLoading) {
     return (
       <div className="justify-center pt-3 mt-4 d-flex align-center w-100">
@@ -97,6 +102,7 @@ const Feed = () => {
           placeholder="Search for a prompt, tag, or username"
           value={searchText}
           onChange={handleSearchChange}
+          onKeyDown={handleKeyDown} // Add the onKeyDown event
           required
           className="search_input peer"
         />

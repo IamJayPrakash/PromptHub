@@ -1,14 +1,18 @@
 // utils/helpers/handleApiError.js
 
-import WarningIcon from "@public/assets/icons/WarningIcon"; // Ensure correct path
+import WarningIcon from "@public/assets/icons/WarningIcon"; 
 import { toast } from "react-toastify";
 
-const showError = (message) =>
+const showError = (message) => {
+  const screenWidth = window.innerWidth;
+
+  // Adjust autoClose time based on screen size
+  const autoCloseTime = screenWidth <= 480 ? 2000 : 3000; // Shorter close time for mobile
+
   toast.error(message, {
-    // Changed to toast.error for consistency
-    icon: <WarningIcon />, // Ensure WarningIcon is a valid React component
+    icon: <WarningIcon />,
     position: "bottom-right",
-    autoClose: 3000,
+    autoClose: autoCloseTime,
     hideProgressBar: true,
     closeOnClick: true,
     pauseOnHover: true,
@@ -17,6 +21,7 @@ const showError = (message) =>
     theme: "dark",
     className: "error-toast",
   });
+};
 
 const handleApiError = ({ error, customMessage }) => {
   if (customMessage) {
